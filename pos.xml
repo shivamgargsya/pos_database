@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.1.12
+- http://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Nov 12, 2014 at 07:51 PM
+- Server version: 5.5.36
+- PHP Version: 5.4.27
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="pos" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="bill">
+                CREATE TABLE `bill` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `order_no` text NOT NULL,
+                  `table_no` text NOT NULL,
+                  `date` text NOT NULL,
+                  `customer_name` text NOT NULL,
+                  `phone_no` text NOT NULL,
+                  `waiter_name` text NOT NULL,
+                  `waiter_id` text NOT NULL,
+                  `discount` text NOT NULL,
+                  `reason` text NOT NULL,
+                  `notes` text NOT NULL,
+                  `total_amount` text NOT NULL,
+                  `payment_mode` text NOT NULL,
+                  `item_list` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="customer">
+                CREATE TABLE `customer` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `username` text NOT NULL,
+                  `email` text NOT NULL,
+                  `mobile_no` text NOT NULL,
+                  `password` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="delete_items">
+                CREATE TABLE `delete_items` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `order_no` text NOT NULL,
+                  `table_no` text NOT NULL,
+                  `date` text NOT NULL,
+                  `waiter_name` text NOT NULL,
+                  `item_name` text NOT NULL,
+                  `quantity` text NOT NULL,
+                  `price` text NOT NULL,
+                  `reason` text NOT NULL,
+                  `note` text NOT NULL,
+                  `total_amount` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="final_order">
+                CREATE TABLE `final_order` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `order_no` text NOT NULL,
+                  `name` text NOT NULL,
+                  `quantity` text NOT NULL,
+                  `price` text NOT NULL,
+                  `table_no` text NOT NULL,
+                  `unit_price` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="papa">
+                CREATE TABLE `papa` (
+                  `order_no` int(11) NOT NULL AUTO_INCREMENT,
+                  `customer_name` text NOT NULL,
+                  `customer_id` text NOT NULL,
+                  `customer_mobile` text NOT NULL,
+                  `table_no` text NOT NULL,
+                  PRIMARY KEY (`order_no`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="reservation">
+                CREATE TABLE `reservation` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `date` text NOT NULL,
+                  `time` text NOT NULL,
+                  `customer_name` text NOT NULL,
+                  `phone_no` text NOT NULL,
+                  `table_no` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="return_orders">
+                CREATE TABLE `return_orders` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `order_no` text NOT NULL,
+                  `table_no` text NOT NULL,
+                  `date` text NOT NULL,
+                  `reason` text NOT NULL,
+                  `note` text NOT NULL,
+                  `waiter_name` text NOT NULL,
+                  `total_amount` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="table_table">
+                CREATE TABLE `table_table` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `table_no` text NOT NULL,
+                  `assigned` text NOT NULL,
+                  `waiter_id` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="waiter">
+                CREATE TABLE `waiter` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `waiter_name` text NOT NULL,
+                  `address` text NOT NULL,
+                  `phone_no` text NOT NULL,
+                  `login_id` text NOT NULL,
+                  `password` text NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'pos'
+    -->
+    <database name="pos">
+        <!-- Table bill -->
+        <table name="bill">
+            <column name="id">1</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">20/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter ID</column>
+            <column name="discount">40</column>
+            <column name="reason">this is note</column>
+            <column name="notes">this is note</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">this is note</column>
+            <column name="item_list">this is note</column>
+        </table>
+        <table name="bill">
+            <column name="id">2</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">22/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount">40</column>
+            <column name="reason">anothernote</column>
+            <column name="notes">anothernote</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">anothernote</column>
+            <column name="item_list">anothernote</column>
+        </table>
+        <table name="bill">
+            <column name="id">3</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">22/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount">50</column>
+            <column name="reason">add the note</column>
+            <column name="notes">add the note</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">add the note</column>
+            <column name="item_list">add the note</column>
+        </table>
+        <table name="bill">
+            <column name="id">4</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">25/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount">70</column>
+            <column name="reason">new note</column>
+            <column name="notes">new note</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">new note</column>
+            <column name="item_list">new note</column>
+        </table>
+        <table name="bill">
+            <column name="id">5</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">25/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount">70</column>
+            <column name="reason">new note</column>
+            <column name="notes">new note</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">new note</column>
+            <column name="item_list">new note</column>
+        </table>
+        <table name="bill">
+            <column name="id">6</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">25/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount">70</column>
+            <column name="reason">new note</column>
+            <column name="notes">new note</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">new note</column>
+            <column name="item_list">new note</column>
+        </table>
+        <table name="bill">
+            <column name="id">7</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">25/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount">70</column>
+            <column name="reason">new note</column>
+            <column name="notes">new note</column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode">new note</column>
+            <column name="item_list">new note</column>
+        </table>
+        <table name="bill">
+            <column name="id">8</column>
+            <column name="order_no">001</column>
+            <column name="table_no">001</column>
+            <column name="date">27/7/2014</column>
+            <column name="customer_name">[Customer ID/Email]</column>
+            <column name="phone_no">+919876543210</column>
+            <column name="waiter_name">[Waiter Name]</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount"></column>
+            <column name="reason"></column>
+            <column name="notes"></column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode"></column>
+            <column name="item_list"></column>
+        </table>
+        <table name="bill">
+            <column name="id">9</column>
+            <column name="order_no">1</column>
+            <column name="table_no">1</column>
+            <column name="date">29/7/2014</column>
+            <column name="customer_name">shivam</column>
+            <column name="phone_no">8440052572</column>
+            <column name="waiter_name">raghav</column>
+            <column name="waiter_id">Waiter 1</column>
+            <column name="discount"></column>
+            <column name="reason"></column>
+            <column name="notes"></column>
+            <column name="total_amount">Rs. 540.00</column>
+            <column name="payment_mode"></column>
+            <column name="item_list"></column>
+        </table>
+        <!-- Table customer -->
+        <!-- Table delete_items -->
+        <table name="delete_items">
+            <column name="id">1</column>
+            <column name="order_no">001</column>
+            <column name="table_no">1</column>
+            <column name="date">30/7/2014</column>
+            <column name="waiter_name">raghav</column>
+            <column name="item_name">chicken</column>
+            <column name="quantity">3</column>
+            <column name="price">400</column>
+            <column name="reason">Wrong Order</column>
+            <column name="note">a note</column>
+            <column name="total_amount">Rs. 540.00</column>
+        </table>
+        <table name="delete_items">
+            <column name="id">2</column>
+            <column name="order_no">1</column>
+            <column name="table_no">100</column>
+            <column name="date">1/8/2014</column>
+            <column name="waiter_name">raghav</column>
+            <column name="item_name">chicken</column>
+            <column name="quantity">3</column>
+            <column name="price">400</column>
+            <column name="reason">Wrong Order</column>
+            <column name="note"></column>
+            <column name="total_amount">Rs. 540.00</column>
+        </table>
+        <table name="delete_items">
+            <column name="id">3</column>
+            <column name="order_no">1</column>
+            <column name="table_no">100</column>
+            <column name="date">27/10/2014</column>
+            <column name="waiter_name">raghav</column>
+            <column name="item_name">chicken</column>
+            <column name="quantity">6</column>
+            <column name="price">600</column>
+            <column name="reason">Wrong Order</column>
+            <column name="note"></column>
+            <column name="total_amount">Rs. 540.00</column>
+        </table>
+        <table name="delete_items">
+            <column name="id">4</column>
+            <column name="order_no">1</column>
+            <column name="table_no">100</column>
+            <column name="date">27/10/2014</column>
+            <column name="waiter_name">raghav</column>
+            <column name="item_name">chicken</column>
+            <column name="quantity">7</column>
+            <column name="price">700</column>
+            <column name="reason">Wrong Order</column>
+            <column name="note"></column>
+            <column name="total_amount">Rs. 540.00</column>
+        </table>
+        <!-- Table final_order -->
+        <table name="final_order">
+            <column name="id">1</column>
+            <column name="order_no">1</column>
+            <column name="name">chicken</column>
+            <column name="quantity">7</column>
+            <column name="price">700</column>
+            <column name="table_no">1</column>
+            <column name="unit_price">100</column>
+        </table>
+        <table name="final_order">
+            <column name="id">2</column>
+            <column name="order_no">2</column>
+            <column name="name">chicken</column>
+            <column name="quantity">8</column>
+            <column name="price">900</column>
+            <column name="table_no">1</column>
+            <column name="unit_price">100</column>
+        </table>
+        <!-- Table papa -->
+        <table name="papa">
+            <column name="order_no">1</column>
+            <column name="customer_name">shivam</column>
+            <column name="customer_id">1</column>
+            <column name="customer_mobile">8440052572</column>
+            <column name="table_no">1</column>
+        </table>
+        <table name="papa">
+            <column name="order_no">2</column>
+            <column name="customer_name">anuj</column>
+            <column name="customer_id">2</column>
+            <column name="customer_mobile">9999955555</column>
+            <column name="table_no">2</column>
+        </table>
+        <!-- Table reservation -->
+        <table name="reservation">
+            <column name="id">1</column>
+            <column name="date">19/7/2014</column>
+            <column name="time">12:19 PM</column>
+            <column name="customer_name">shivam</column>
+            <column name="phone_no">8440052572</column>
+            <column name="table_no">Table 1</column>
+        </table>
+        <table name="reservation">
+            <column name="id">2</column>
+            <column name="date">20/7/2014</column>
+            <column name="time">01:35 AM</column>
+            <column name="customer_name">second</column>
+            <column name="phone_no">4444488888</column>
+            <column name="table_no">Table 1</column>
+        </table>
+        <!-- Table return_orders -->
+        <table name="return_orders">
+            <column name="id">1</column>
+            <column name="order_no">1</column>
+            <column name="table_no">1</column>
+            <column name="date">31/7/2014</column>
+            <column name="reason">Loyalty Points</column>
+            <column name="note">a note</column>
+            <column name="waiter_name">raghav</column>
+            <column name="total_amount">Rs. 540.00</column>
+        </table>
+        <table name="return_orders">
+            <column name="id">2</column>
+            <column name="order_no">1</column>
+            <column name="table_no">1</column>
+            <column name="date">1/8/2014</column>
+            <column name="reason">Loyalty Points</column>
+            <column name="note">hghjgjh</column>
+            <column name="waiter_name">raghav</column>
+            <column name="total_amount">Rs. 540.00</column>
+        </table>
+        <!-- Table table_table -->
+        <table name="table_table">
+            <column name="id">1</column>
+            <column name="table_no">1</column>
+            <column name="assigned">1</column>
+            <column name="waiter_id">1</column>
+        </table>
+        <table name="table_table">
+            <column name="id">2</column>
+            <column name="table_no">1</column>
+            <column name="assigned">1</column>
+            <column name="waiter_id">1</column>
+        </table>
+        <!-- Table waiter -->
+        <table name="waiter">
+            <column name="id">1</column>
+            <column name="waiter_name">raghav</column>
+            <column name="address">fasfasfasdfas</column>
+            <column name="phone_no">8888855555</column>
+            <column name="login_id">aaa</column>
+            <column name="password">aaa</column>
+        </table>
+        <table name="waiter">
+            <column name="id">2</column>
+            <column name="waiter_name">kalia</column>
+            <column name="address">sadfasdf</column>
+            <column name="phone_no">6666699999</column>
+            <column name="login_id">sss</column>
+            <column name="password">sss</column>
+        </table>
+        <table name="waiter">
+            <column name="id">3</column>
+            <column name="waiter_name">anuj</column>
+            <column name="address">ajsdjjfjjasdjfjasfjjasd</column>
+            <column name="phone_no">9760616795</column>
+            <column name="login_id">9760616795</column>
+            <column name="password">123</column>
+        </table>
+        <table name="waiter">
+            <column name="id">4</column>
+            <column name="waiter_name">akash</column>
+            <column name="address">asdjfjasdfjajfjjsaf</column>
+            <column name="phone_no">8057434089</column>
+            <column name="login_id">8057434089</column>
+            <column name="password">123</column>
+        </table>
+    </database>
+</pma_xml_export>
